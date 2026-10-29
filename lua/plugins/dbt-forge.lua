@@ -4,7 +4,11 @@ return {
     config = function()
         require("dbt-forge").setup({
             keymaps = {
-                lineage = '<leader>dl'
+                lineage = '<leader>dl',
+                -- dbtpal handles running dbt; these defaults would also clash with <leader>drun/<leader>dtest
+                run_model = false,
+                transpile_model = false,
+                test_model = false,
             },
             lineage = {
                 up_depth = 2,
